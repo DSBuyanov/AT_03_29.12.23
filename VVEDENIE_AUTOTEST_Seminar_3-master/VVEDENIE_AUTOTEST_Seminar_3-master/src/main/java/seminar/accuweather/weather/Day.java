@@ -14,6 +14,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 public class Day {
 
+//в этот класс надо добавить поле PrecipitationIntensity, аналогично класу Night
+        
     @JsonProperty("Icon")
     private Integer icon;
     @JsonProperty("IconPhrase")
