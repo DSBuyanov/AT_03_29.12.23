@@ -37,6 +37,7 @@ class ForecastsFiveDaysTest extends AccuweatherAbstractTest {
                 .when().get(getBaseUrl() + "/locations/v1/cities/autocomplete")
                 .then().statusCode(200)
                 .extract().body().jsonPath().getList(".", Location.class);
+        //для записи "Moscow, 5, Moscowai" возвращается 10 записей, а не 5
         assertAll(() -> assertEquals(expectedSize, listLocations.size()),
                 () -> assertEquals(expectedName, listLocations.get(2).getLocalizedName()));
     }
